@@ -195,6 +195,7 @@ export default function DrawerAppBar(props) {
           sx={{
             paddingLeft: {
               sm: '0px',
+              xs: '0px',
             },
             display: {
               sm: 'contents',

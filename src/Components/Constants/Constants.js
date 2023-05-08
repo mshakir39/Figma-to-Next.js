@@ -84,15 +84,15 @@ export const CareList = [
 
 export const Offerings = [{
     img: "/offer.svg",
-    des: " Get birth control online through Zealthy, all from the comfort of your home.1",
+    des: " Get birth control online through Zealthy, all from the comfort of your home.",
 },
 {
-    img: "/offer.svg",
-    des: " Get birth control online through Zealthy, all from the comfort of your home.2",
+    img: "/med1.jpg",
+    des: " Get birth control online through Zealthy, all from the comfort of your home.",
 },
 {
-    img: "/offer.svg",
-    des: " Get birth control online through Zealthy, all from the comfort of your home.3",
+    img: "/med2.jpg",
+    des: " Get birth control online through Zealthy, all from the comfort of your home.",
 },
 
 ]

@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Offerings } from '../Constants/Constants';
-
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import IconButton from '@mui/material/IconButton';
 const Offering = () => {
-  const [slide, setSlide] = useState('0');
+  const [slide, setSlide] = useState(0);
   useEffect(() => {
     console.log('slide', slide);
   }, [slide]);
@@ -49,7 +51,7 @@ const Offering = () => {
             },
             background: 'rgba(0, 33, 11, 0.8)',
             position: 'absolute',
-            bottom: '4%',
+            bottom: '0%',
             display: 'flex',
             flexDirection: 'row',
             alignItems: 'center',
@@ -70,6 +72,7 @@ const Offering = () => {
               fontWeight: '400',
               lineHeight: '24px',
               color: 'white',
+              transitionDelay: '2s',
             }}
           >
             {Offerings[Number(slide)].des}
@@ -89,6 +92,42 @@ const Offering = () => {
             />
           </Box>
         </Box>
+        {slide !== 0 && (
+          <IconButton
+            sx={{
+              position: 'absolute',
+              top: {
+                md: '40%',
+                xs: '30%',
+              },
+              left: {
+                md: '2%',
+              },
+            }}
+            onClick={() => setSlide(slide - 1)}
+          >
+            <KeyboardArrowLeftIcon sx={{ color: 'white', fontSize: '47px' }} />
+          </IconButton>
+        )}
+
+        {slide !== 2 && (
+          <IconButton
+            sx={{
+              position: 'absolute',
+              top: {
+                md: '40%',
+                xs: '30%',
+              },
+              left: {
+                md: '87%',
+                xs: '80%',
+              },
+            }}
+            onClick={() => setSlide(slide + 1)}
+          >
+            <KeyboardArrowRightIcon sx={{ color: 'white', fontSize: '47px' }} />
+          </IconButton>
+        )}
       </Box>
       <Box
         component='div'
@@ -103,12 +142,12 @@ const Offering = () => {
           component='a'
           id='0'
           onClick={() => {
-            setSlide('0');
+            setSlide(0);
           }}
           sx={{
             height: '16px',
             width: '16px',
-            background: slide === '0' ? '#00872B' : '#CCCCCC',
+            background: slide === 0 ? '#00872B' : '#CCCCCC',
             borderRadius: '50%',
             marginRight: '10px',
             cursor: 'pointer',
@@ -118,12 +157,12 @@ const Offering = () => {
           id='1'
           component='a'
           onClick={() => {
-            setSlide('1');
+            setSlide(1);
           }}
           sx={{
             height: '16px',
             width: '16px',
-            background: slide === '1' ? '#00872B' : '#CCCCCC',
+            background: slide === 1 ? '#00872B' : '#CCCCCC',
             borderRadius: '50%',
             marginRight: '10px',
             cursor: 'pointer',
@@ -133,12 +172,12 @@ const Offering = () => {
           id='2'
           component='a'
           onClick={() => {
-            setSlide('2');
+            setSlide(2);
           }}
           sx={{
             height: '16px',
             width: '16px',
-            background: slide === '2' ? '#00872B' : '#CCCCCC',
+            background: slide === 2 ? '#00872B' : '#CCCCCC',
             borderRadius: '50%',
             cursor: 'pointer',
           }}
