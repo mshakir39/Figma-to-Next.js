@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-
-function offerings() {
+import { Offerings } from '../Constants/Constants';
+const offerings = () => {
+  const [slide, setSlide] = useState('0');
+  useEffect(() => {
+    console.log('slide', slide);
+  }, [slide]);
   return (
     <>
       <Box
@@ -23,7 +27,7 @@ function offerings() {
         }}
       >
         <Image
-          src='/offer.svg'
+          src={Offerings[Number(slide)].img}
           alt='SVG as an image'
           width={0}
           height={0}
@@ -67,8 +71,7 @@ function offerings() {
               color: 'white',
             }}
           >
-            Get birth control online through Zealthy, all from the comfort of
-            your home.
+            {Offerings[Number(slide)].des}
           </Typography>
           <Box
             sx={{
@@ -96,37 +99,52 @@ function offerings() {
         }}
       >
         <Box
-          component='div'
+          component='a'
+          id='0'
+          onClick={() => {
+            setSlide('0');
+          }}
           sx={{
             height: '16px',
             width: '16px',
-            background: '#00872B',
+            background: slide === '0' ? '#00872B' : '#CCCCCC',
             borderRadius: '50%',
             marginRight: '10px',
+            cursor: 'pointer',
           }}
         ></Box>
         <Box
-          component='div'
+          id='1'
+          component='a'
+          onClick={() => {
+            setSlide('1');
+          }}
           sx={{
             height: '16px',
             width: '16px',
-            background: '#CCCCCC',
+            background: slide === '1' ? '#00872B' : '#CCCCCC',
             borderRadius: '50%',
             marginRight: '10px',
+            cursor: 'pointer',
           }}
         ></Box>
         <Box
-          component='div'
+          id='2'
+          component='a'
+          onClick={() => {
+            setSlide('2');
+          }}
           sx={{
             height: '16px',
             width: '16px',
-            background: '#CCCCCC',
+            background: slide === '2' ? '#00872B' : '#CCCCCC',
             borderRadius: '50%',
+            cursor: 'pointer',
           }}
         ></Box>
       </Box>
     </>
   );
-}
+};
 
 export default offerings;
