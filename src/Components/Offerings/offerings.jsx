@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { Offerings } from '../Constants/Constants';
-const offerings = () => {
+
+const Offering = () => {
   const [slide, setSlide] = useState('0');
   useEffect(() => {
     console.log('slide', slide);
@@ -147,4 +148,4 @@ const offerings = () => {
   );
 };
 
-export default offerings;
+export default Offering;
