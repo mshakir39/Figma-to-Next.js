@@ -99,8 +99,8 @@ function Item({ type, title, icon, des }) {
 
             width: {
               xs: '158px',
-              md: type === 'care' ? '400px' : '307px',
-              lg: type === 'care' ? '400px' : '307px',
+              md: type === 'care' ? '400px' : '354px',
+              lg: type === 'care' ? '400px' : '354px',
             },
           }}
         >
